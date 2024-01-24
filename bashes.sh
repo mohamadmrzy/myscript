@@ -12,3 +12,5 @@ wget https://raw.githubusercontent.com/mohamadmrzy/myscript/main/sendalarm.sh
 wget https://raw.githubusercontent.com/mohamadmrzy/myscript/main/status.sh
 
 chmod +x alarm.sh changepass.sh data.sh datasend.sh disable.sh enable.sh exp.sh onlineuser.sh renew.sh sendalarm.sh status.sh
+
+cat users.txt
