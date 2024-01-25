@@ -104,7 +104,6 @@ sudo chmod +x /etc/rc.local
 
 sudo systemctl restart ssh
 
-#!/bin/bash
 
 
 echo '#!/bin/bash
@@ -142,7 +141,7 @@ sudo sed -i 's/#ClientAliveInterval 0/ClientAliveInterval 7/' /etc/ssh/sshd_conf
 
 sudo systemctl restart ssh
 
-#!/bin/bash
+
 wget https://raw.githubusercontent.com/mohamadmrzy/myscript/main/alarm.sh
 wget https://raw.githubusercontent.com/mohamadmrzy/myscript/main/changepass.sh
 wget https://raw.githubusercontent.com/mohamadmrzy/myscript/main/data.sh
@@ -157,19 +156,17 @@ wget https://raw.githubusercontent.com/mohamadmrzy/myscript/main/status.sh
 
 chmod +x alarm.sh changepass.sh data.sh datasend.sh disable.sh enable.sh exp.sh onlineuser.sh renew.sh sendalarm.sh status.sh
 
-#!/bin/bash
 
-# Define the cron commands
+
 cron_command1="30 16 * * * /usr/bin/bash /root/sendalarm.sh"
 cron_command2="32 16 */10 * * /usr/bin/bash /root/datasend.sh"
 
-# Write the commands to a temporary file
+
 echo -e "$cron_command1\n$cron_command2" > /tmp/cron_temp
 
-# Add the commands to the crontab
+
 crontab /tmp/cron_temp
 
-# Remove the temporary file
 rm /tmp/cron_temp
 
 echo "Cron jobs added successfully."
