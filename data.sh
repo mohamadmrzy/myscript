@@ -1,4 +1,6 @@
 #!/bin/bash
+IP=$(hostname -I | cut -d ' ' -f 1)
+loc=$(curl -s ipinfo.io | jq -r '.country')
 users=$(awk -F: '{ print $1}' /etc/passwd |grep "vpn-*")
 for value in $users
 do 
@@ -10,6 +12,6 @@ EXP=$(chage -l $value | awk -F: '/Account expires/{ print $2}')
 done
 echo "*************"
 echo "this is weekly report"
-echo "server location: 🇨🇭"
-echo "server IP: 179.43.155.81"
+echo "server location:" $loc
+echo "server IP:" $IP
 echo "*************"
