@@ -143,5 +143,7 @@ rm /tmp/cron_temp
 
 echo "Cron jobs added successfully."
 
+apt install jq -y
+
 # Reboot the system
 reboot
