@@ -14,3 +14,5 @@ crontab /tmp/cron_temp
 rm /tmp/cron_temp
 
 echo "Cron jobs added successfully."
+
+sudo reboot
