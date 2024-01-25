@@ -2,6 +2,8 @@
 R='\033[0;31m'
 G='\033[0;32m'
 NOCOLOR='\033[0m'
+IP=$(hostname -I | cut -d ' ' -f 1)
+loc=$(curl -s ipinfo.io | jq -r '.country')
 users=$(awk -F: '{ print $1}' /etc/passwd |grep "vpn-*")
 for value in $users
 do 
@@ -23,6 +25,6 @@ fi
 done
 echo "*************"
 echo "this is daily report"
-echo "server location: 🇺🇸"
-echo "server IP: 37.1.210.199"
+echo "server location:" $loc
+echo "server IP:" $IP
 echo "*************"
