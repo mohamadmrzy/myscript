@@ -5,6 +5,7 @@ sudo apt update -y && sudo apt upgrade -y
 
 # Configure UFW
 sudo ufw allow 443
+sudo ufw allow 2095
 sudo ufw allow 7555
 sudo ufw allow 72555
 sudo ufw allow https
@@ -14,6 +15,7 @@ sudo ufw enable
 
 # Enable PAM in SSH configuration
 echo "UsePAM yes" | sudo tee -a /etc/ssh/sshd_config
+echo "Port 2095" | sudo tee -a /etc/ssh/sshd_config
 
 # Create users and set passwords
 usernames=("vpn-1" "vpn-2" "vpn-3" "vpn-4" "vpn-5" "vpn-6" "vpn-7" "vpn-8" "vpn-9" "vpn-10" "vpn-11" "vpn-12" "vpn-13" "vpn-14" "vpn-15" "vpn-16" "vpn-17" "vpn-18" "vpn-19" "vpn-20" "vpn-21" "vpn-22" "vpn-23" "vpn-24" "vpn-25" "vpn-26" "vpn-27" "vpn-28" "vpn-29" "vpn-30")
